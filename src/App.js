@@ -19,7 +19,7 @@ class App extends Component {
       input: e.target.value // input 의 다음 바뀔 값
     });
   }
-
+  
   handleCreate = () => {
     const { input, todos } = this.state;
     this.setState({
@@ -84,7 +84,7 @@ class App extends Component {
         />
       )}>
         <div>
-          <Clock format={'YYYY년 MM월 DD일 HH:mm:ss'} ticking={true} timezone={'KR/Pacific'}/>
+          <Clock format={'YYYY년 MM월 DD일 HH:mm:ss'} ticking={true} timezone={'/Pacific'}/>
         </div>
         <TodoItemList todos={todos} onToggle={handleToggle} onRemove={handleRemove}/>
       </TodoListTemplate>

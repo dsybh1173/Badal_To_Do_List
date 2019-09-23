@@ -5,26 +5,23 @@ import TodoItemList from './components/TodoItemList';
 import Clock from 'react-live-clock';
 class App extends Component {
 
-  id = 3 // 이미 0,1,2 가 존재하므로 3으로 설정
+  id = 0 
 
   state = {
     input: '',
-    todos: [
-      { id: 0, text: ' 할 일을 작성해주세요 ', checked: false },
-    ]
+    todos: []
   }
 
   handleChange = (e) => {
     this.setState({
-      input: e.target.value // input 의 다음 바뀔 값
+      input: e.target.value 
     });
   }
   
   handleCreate = () => {
     const { input, todos } = this.state;
     this.setState({
-      input: '', // 인풋 비우고
-      // concat 을 사용하여 배열에 추가
+      input: '', 
       todos: todos.concat({
         id: this.id++,
         text: input,
@@ -34,7 +31,6 @@ class App extends Component {
   }
 
   handleKeyPress = (e) => {
-    // 눌려진 키가 Enter 면 handleCreate 호출
     if(e.key === 'Enter') {
       this.handleCreate();
     }
